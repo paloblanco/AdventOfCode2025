@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advent of Code Solver</title>
+</head>
+<body>
+  <h1>Advent of Code Solver</h1>
+
+  <label for="input">Paste your puzzle input:</label><br>
+  <textarea id="input">A test for AOC2025.
+This has two lines!</textarea><br>
+  
+  <!-- Day selector -->
+  <label for="daySelect">Choose a day:</label>
+  <select id="daySelect">
+    <option value="day0.js">Day 0</option>
+    <option value="day1.js">Day 1</option>
+  </select>
+
+  <br>
+
+  <button id="solveBtn">Solve</button>
+
+  <h2>Result:</h2>
+  <pre id="output"></pre>
+  <h2>Solution Code:</h2>
+  <pre id="solution"></pre>
+
+  <!-- <script src="./day0.js"></script> -->
+  <!-- <script src="./day1.js"></script> -->
+
+  <script>
+    
+    let currentScript = null;
+
+    function loadDayScript(filename) {
+      // remove old script
+      if (currentScript) {
+        currentScript.remove();
+        currentScript = null;
+      }
+
+      const script = document.createElement("script");
+      script.src = filename;
+      script.onload = () => {
+        // script is fully loaded and solve() exists now
+        document.getElementById("solution").textContent = solve.toString();
+      };
+
+      document.body.appendChild(script);
+      currentScript = script;
+
+      // Clear output areas
+      document.getElementById("output").textContent = "";
+      document.getElementById("solution").textContent = "";
+      };
+
+    // Load default day
+    loadDayScript("day0.js");
+
+      // Change day event
+    document.getElementById("daySelect").addEventListener("change", (e) => {
+      loadDayScript(e.target.value);
+    });
+
+    document.getElementById("solveBtn").addEventListener("click", () => {
+      const input = document.getElementById("input").value;
+      const result = solve(input);
+      document.getElementById("output").textContent = result;
+      });
+
+      
+     
+     
+  </script>
+</body>
+</html>
