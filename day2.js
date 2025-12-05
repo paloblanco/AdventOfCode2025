@@ -1,3 +1,7 @@
+function inputTest() {
+    return `11-22,95-115,998-1012,1188511880-1188511890,222220-222224,1698522-1698528,446443-446449,38593856-38593862,565653-565659,824824821-824824827,2121212118-2121212124`;
+}
+
 function solve(input) {
   const ranges = input.trim().split(",");
   let badIDs = [];
@@ -53,9 +57,8 @@ if (typeof require !== "undefined" && require.main === module) {
   const fs = require("fs");
   const filePath = process.argv[2] || "input.txt";
   const input = fs.readFileSync(filePath, "utf8");
-  const inputTest = `11-22,95-115,998-1012,1188511880-1188511890,222220-222224,1698522-1698528,446443-446449,38593856-38593862,565653-565659,824824821-824824827,2121212118-2121212124`
-  console.log(solve(inputTest));
+  console.log(solve(inputTest()));
   console.log(solve(input));
-  console.log(solve2(inputTest));
+  console.log(solve2(inputTest()));
   console.log(solve2(input));
 }

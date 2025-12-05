@@ -1,3 +1,16 @@
+function inputTest() {
+    return `..@@.@@@@.
+@@@.@.@.@@
+@@@@@.@.@@
+@.@@@@..@.
+@@.@@@@.@@
+.@@@@@@@.@
+.@.@.@.@@@
+@.@@@.@@@@
+.@@@@@@@@.
+@.@.@@@.@.`;
+ }
+
 function solve(input) {
   const grid = input.trim().split("\n");
   const height = grid.length;
@@ -59,18 +72,8 @@ if (typeof require !== "undefined" && require.main === module) {
   const fs = require("fs");
   const filePath = process.argv[2] || "input.txt";
   const input = fs.readFileSync(filePath, "utf8");
-  const inputTest = `..@@.@@@@.
-@@@.@.@.@@
-@@@@@.@.@@
-@.@@@@..@.
-@@.@@@@.@@
-.@@@@@@@.@
-.@.@.@.@@@
-@.@@@.@@@@
-.@@@@@@@@.
-@.@.@@@.@.`
-  console.log(solve(inputTest));
+  console.log(solve(inputTest()));
   console.log(solve(input));
-  console.log(solve2(inputTest));
+  console.log(solve2(inputTest()));
   console.log(solve2(input));
 }

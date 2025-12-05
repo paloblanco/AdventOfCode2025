@@ -41,9 +41,13 @@ This has two lines!</textarea><br>
 
   <h2>Solution Code:</h2>
   <h4>Part 1:</h4>
-  <pre id="solution1"></pre>
+  <pre>
+<code id="solution1" class="language-javascript"></code>
+  </pre>
   <h4>Part 2:</h4>
-  <pre id="solution2"></pre>
+  <pre>
+<code id="solution2" class="language-javascript"></code>
+  </pre>
 
   <script>
     
@@ -72,6 +76,7 @@ This has two lines!</textarea><br>
         // script is fully loaded and solve() exists now
         document.getElementById("solution1").textContent = solve.toString();
         document.getElementById("solution2").textContent = solve2.toString();
+        document.getElementById("input").textContent = inputTest().toString();
       };
     };
 

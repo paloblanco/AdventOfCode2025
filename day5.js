@@ -1,3 +1,17 @@
+function inputTest() {
+    return `3-5
+10-14
+16-20
+12-18
+
+1
+5
+8
+11
+17
+32`;
+}
+
 function solve(input) {
   const lines = input.trim().split("\n");
   let ranges = [];
@@ -89,19 +103,8 @@ if (typeof require !== "undefined" && require.main === module) {
   const fs = require("fs");
   const filePath = process.argv[2] || "input.txt";
   const input = fs.readFileSync(filePath, "utf8");
-  const inputTest = `3-5
-10-14
-16-20
-12-18
-
-1
-5
-8
-11
-17
-32`;
-  console.log(solve(inputTest));
+  console.log(solve(inputTest()));
   console.log(solve(input));
-  console.log(solve2(inputTest));
+  console.log(solve2(inputTest()));
   console.log(solve2(input)); //354226555270059 too high
 }

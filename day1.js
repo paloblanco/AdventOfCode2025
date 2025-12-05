@@ -1,6 +1,14 @@
-function solve0(input) {
-  const lines = input.trim().split("\n");
-  return `Number of lines: ${lines.length}`;
+function inputTest() {
+    return `L68
+L30
+R48
+L5
+R60
+L55
+L1
+L99
+R14
+L82`;
 }
 
 function mod(top, bottom) {
@@ -48,22 +56,8 @@ if (typeof require !== "undefined" && require.main === module) {
   const fs = require("fs");
   const filePath = process.argv[2] || "input.txt";
   const input = fs.readFileSync(filePath, "utf8");
-  const input_test = `L68
-L30
-R48
-L5
-R60
-L55
-L1
-L99
-R14
-L82`
-//   const input_test = `L50
-// R1
-// L1
-// R1`
-  console.log(solve(input_test));
+  console.log(solve(inputTest()));
   console.log(solve(input));
-  console.log(solve2(input_test));
+  console.log(solve2(inputTest()));
   console.log(solve2(input)); // 6694 too high
 }
