@@ -6,3 +6,15 @@ html {
     max-width: 50em;
     padding: 0 1em 4em;
 }
+
+pre {
+    /* white-space: pre-wrap;
+    word-wrap: break-word; */
+    overflow: auto;
+    font-family: monospace;
+    padding: 1em;
+    background-color: #f8f8f8; /* Light gray background */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: block;
+}
